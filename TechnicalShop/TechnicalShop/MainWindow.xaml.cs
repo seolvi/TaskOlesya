@@ -26,7 +26,7 @@ namespace TechnicalShop
         {
             InitializeComponent();
             LogoImage.Source = new BitmapImage(new Uri(@"\Resources\YN6R1T91lhc.jpg", UriKind.Relative));
-            MainFrame.Navigate(new ItemList());
+            MainFrame.Navigate(new AuthorizatePage()); 
         }
     }
 }

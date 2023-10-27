@@ -1,0 +1,52 @@
+﻿<Page x:Class="TechnicalShop.Pages.ProductListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TechnicalShop.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProductListPage">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="61*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="Фильтр по цене"></Label>
+            <ComboBox HorizontalAlignment="Left" Margin="15 0" Width="100" Height="20" SelectionChanged="ComboBox_SelectionChanged" x:Name="SortCb" >
+                <ComboBoxItem>По умолчанию</ComboBoxItem>
+                <ComboBoxItem>По возрастанию</ComboBoxItem>
+                <ComboBoxItem>По убыванию</ComboBoxItem>
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Фильтр: по скидке</TextBlock>
+            <ComboBox x:Name="FilterDiscountCb" Margin="15 0" Width="100" Height="20" SelectionChanged="FilterDiscountCb_SelectionChanged" >
+                <ComboBoxItem Content="все"/>
+                <ComboBoxItem Content="от 0% до 5%"/>
+                <ComboBoxItem Content="от 5% до 15%"/>
+                <ComboBoxItem Content="от 15% до 30%"/>
+                <ComboBoxItem Content="от 30% до 70%"/>
+                <ComboBoxItem Content="от 70% до 100%"/>
+            </ComboBox>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="Поиск"></Label>
+            <TextBox x:Name="SearchTb" TextChanged="SearchTb_TextChanged" Width="100" Background="LightSkyBlue" Height="20"></TextBox>
+        </StackPanel>
+
+
+
+
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" Grid.Row="1">
+            <WrapPanel x:Name="ServicesWp" ></WrapPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button  Height="30" Width="100" x:Name="AddBtn" Click="AddBtn_Click">Добавить</Button>
+            <TextBlock Margin="20 0" x:Name="CountDataTb"></TextBlock>
+        </StackPanel>
+
+
+    </Grid>
+</Page>

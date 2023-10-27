@@ -15,5 +15,6 @@ namespace TechnicalShop
     public partial class App : Application
     {
         public static TaskOlesyaEntities db = new TaskOlesyaEntities();
+        public static bool IsAdmin = false;
     }
 }
